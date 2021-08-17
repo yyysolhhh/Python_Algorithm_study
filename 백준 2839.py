@@ -1,12 +1,21 @@
 
 def bonji5(n):
-    numOf5 = N // 5
-    if (N % 5) % 3 != 0:
+    numOf5 = n // 5
+    if (n % 5) % 3 != 0:
         return numOf5 - 1
     else:
         return numOf5
 
 
 N = int(input())
-numOf3 = (N - (bonji5(N) * 5))/3
-print(int(bonji5(N) + numOf3))
+numOf5 = bonji5(N)
+numOf3 = (N - (numOf5 * 5))//3
+print(numOf5, numOf3)
+if (numOf3 * 3 + numOf5 * 5 != N):
+    numOf5 -= 1
+    numOf3 = (N - numOf5*5) // 3
+
+elif numOf5 < 0:
+    print(-1)
+else:
+    print(numOf5 + numOf3)
