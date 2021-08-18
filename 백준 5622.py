@@ -21,12 +21,22 @@
 # print(t)
 
 # 2
+# Alphabet = ['ABC', 'DEF', 'GHI', 'JKL', 'MNO', 'PQRS', 'TUV', 'WXYZ']
+# Word = input()
+# t = 0
+# for unit in Alphabet:
+#     for i in unit:
+#         for j in Word:
+#             if i == j:
+#                 t += Alphabet.index(unit) + 3
+# print(t)
+
+# 3
 Alphabet = ['ABC', 'DEF', 'GHI', 'JKL', 'MNO', 'PQRS', 'TUV', 'WXYZ']
 Word = input()
 t = 0
 for unit in Alphabet:
-    for i in unit:
-        for j in Word:
-            if i == j:
-                t += Alphabet.index(unit) + 3
+    for i in Word:
+        if i in unit:
+            t += Alphabet.index(unit) + 3
 print(t)
