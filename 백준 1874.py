@@ -1,17 +1,23 @@
 n = int(input())
 stack = []
 operation = []
+count = 0
+no = 0
 for i in range(n):
     num = int(input())
-    for j in range(1, num+1):
+    while count < num:
+        count += 1
         operation.append("+")
-        stack.append(j)
+        stack.append(count)
+    if stack[-1] == num:
+        operation.append("-")
+        stack.pop()
+    else:
+        no = True
+        break
 
-# for i in range(1, n+1):
-#     for j in num:
-#         if i != j:
-#             stack.append(i)
-#             print("+")
-#         elif i == j:
-#             stack.pop()
-#             print("-")
+if no == True:
+    print("NO")
+else:
+    for i in operation:
+        print(i)
