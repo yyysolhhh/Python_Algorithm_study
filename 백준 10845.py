@@ -3,6 +3,7 @@ import sys
 
 def push(x):
     queue.append(x)
+    # queue.insert(0, x)
 
 
 def pop():
@@ -10,6 +11,7 @@ def pop():
         return -1
     else:
         return queue.pop(0)
+        # return queue.pop()
 
 
 def size():
@@ -26,6 +28,8 @@ def empty():
 def front():
     if queue:
         return queue[0]
+        # return queue[-1]
+
     else:
         return -1
 
@@ -33,6 +37,7 @@ def front():
 def back():
     if queue:
         return queue[-1]
+        # return queue[0]
     else:
         return -1
 
