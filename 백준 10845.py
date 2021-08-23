@@ -1,3 +1,6 @@
+import sys
+
+
 def push(x):
     queue.append(x)
 
@@ -34,10 +37,10 @@ def back():
         return -1
 
 
-N = int(input())
+N = int(sys.stdin.readline())
 queue = []
 for _ in range(N):
-    command = list(input().split())
+    command = list(sys.stdin.readline().split())
     if command[0] == "push":
         x = command[1]
         push(x)
