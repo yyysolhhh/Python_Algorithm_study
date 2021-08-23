@@ -2,7 +2,7 @@ n = int(input())
 stack = []
 operation = []
 count = 0
-no = 0
+no = False
 for i in range(n):
     num = int(input())
     while count < num:
