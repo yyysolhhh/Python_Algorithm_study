@@ -7,7 +7,9 @@ while circle:
     print(o)
     if o > N:
         o = N - K - 1
-    print(o)
+    if N == 1:
+        o = 0
+    print(N, o)
     del circle[o]
     N -= 1
     o += K - 1
