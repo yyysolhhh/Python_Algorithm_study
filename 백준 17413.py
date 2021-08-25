@@ -28,31 +28,58 @@
 # # print(tag+string[::-1], end='')
 # # print(" ", end='')
 
+# 실패
+# import sys
+# S = sys.stdin.readline()
+# tag = False
+# ans = []
+# mid = []
+# reverse = []
+# index = []
+# for i in range(len(S)):
+#     if S[i] == "<":
+#         tag = True
+#         ans.append(S[i])
+#         continue
+#     elif S[i] == ">":
+#         tag = False
+#         ans.append(S[i])
+#         index.append(i)
+#         continue
+#     if tag == True:
+#         ans.append(S[i])
+#     else:
+#         mid.append(S[i])
+#     mid = "".join(mid).strip()
+# for i in mid.split():
+#     reverse.append(i[::-1])
+#     reverse.append(" ")
+
+# ans.insert(index[int((len(index)/2-1))]+1, "".join(reverse).strip())
+# print("".join(ans))
+
 import sys
 S = sys.stdin.readline()
 tag = False
+in_tag = []
 ans = []
-mid = []
-reverse = []
 index = []
+
 for i in range(len(S)):
     if S[i] == "<":
         tag = True
-        ans.append(S[i])
+        in_tag.append(S[i])
         continue
     elif S[i] == ">":
         tag = False
-        ans.append(S[i])
-        index.append(i)
+        in_tag.append(S[i])
         continue
     if tag == True:
-        ans.append(S[i])
+        in_tag.append(S[i])
     else:
-        mid.append(S[i])
-    mid = "".join(mid).strip()
-    for i in mid.split():
-        reverse.append(i[::-1])
-        reverse.append(" ")
-
-ans.insert(index[int((len(index)/2-1))]+1, "".join(reverse).strip())
-print("".join(ans))
+        ans.append(S[i])
+        # index[0].append(i)
+    # mid = "".join(mid).strip()
+    # ans[index[0]:index[-1]+1].reverse()
+print(in_tag, ans)
+print("".join(in_tag)+"".join(ans))
