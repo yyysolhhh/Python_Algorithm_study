@@ -1,8 +1,8 @@
 N = int(input())
 num = list(map(int, input().split()))
-prime_num = 0
+prime_num = 0       # 소수 개수
 for i in num:
-    count_d = 0
+    count_d = 0     # 약수 개수
     for j in range(1, i+1):
         if i % j == 0:
             count_d += 1
