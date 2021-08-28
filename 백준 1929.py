@@ -9,13 +9,31 @@
 #     if count_d == 2:
 #         print(i)    # 약수 개수가 2일 때 소수 출력
 
+# 시간 초과
+# import sys
+# M, N = map(int, sys.stdin.readline().split())
+# for i in range(M, N+1):
+#     prime = True
+#     for j in range(2, int(i ** 0.5) + 1):
+#         if i % j == 0:
+#             prime = False
+#             continue
+#     if prime == True:
+#         print(i)
+
 import sys
+
+
+def isPrime(num):
+    if num == 1:
+        return False
+    for j in range(2, int(num**0.5)+1):
+        if num % j == 0:
+            return False
+    return True
+
+
 M, N = map(int, sys.stdin.readline().split())
 for i in range(M, N+1):
-    prime = True
-    for j in range(2, int(i ** 0.5) + 1):
-        if i % j == 0:
-            prime = False
-            continue
-    if prime == True:
+    if isPrime(i):
         print(i)
