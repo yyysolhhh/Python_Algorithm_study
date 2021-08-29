@@ -10,7 +10,7 @@ for j in range(len(fac_str)):
         print(j)
         break
 
-# 다른 사람 풀이: 5가 곱해진 개수가 0의 개수
+# 다른 사람 풀이: 2, 5가 곱해진 개수가 0의 개수
 input = sys.stdin.readline
 N = int(input())
 count = 0  # 0 개수
