@@ -25,7 +25,7 @@ while(1):
         break
     print("%d = %d + %d" % (n, goldbach(n)[0], goldbach(n)[1]))
 
-# 2 다른 사람 풀이
+# 2 다른 사람 풀이(시간 더 적게 걸림)
 
 
 def Goldbach():
