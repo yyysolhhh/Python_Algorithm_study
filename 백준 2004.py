@@ -18,7 +18,7 @@
 #         print(i)
 #         break
 
-# 2
+# 2 다른 사람 풀이 참고
 import sys
 
 
