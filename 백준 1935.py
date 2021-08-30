@@ -1,6 +1,3 @@
-import string
-
-
 def calculate(op):
     if op == "+":
         return stack.pop() + stack.pop()
@@ -14,30 +11,17 @@ def calculate(op):
 
 N = int(input())
 expression = input()
-value = []
-for _ in range(N):
-    value.append(int(input()))
+value = [0 for i in range(N)]
+for i in range(N):
+    value[i] = int(input())
+print(value)
 stack = []
 operation = ['+', '-', '*', '/']
-operand = [i for i in string.ascii_uppercase]
 
-# for i in range(len(expression)):
-#   if expression[i+2] == "+":
-#     stack.append(expression[i] + expression[i+1])
 for i in range(len(expression)):
-    if expression[i] in operand:
-        stack.append(value.pop(0))
+    if expression[i].isalnum():
+        stack.append(value[ord(expression[i]) - ord('A')])
     elif expression[i] in operation:
         stack.append(calculate(expression[i]))
-print(round(stack[-1], 3))
-
-
-# for i in expression:
-#     stack.append(i)
-#     if i in operand:
-#         i = value[0]
-#     print(stack)
-#     if i in operation:
-#         stack.append(calculate(stack.pop()))
-#         print(stack)
-# print(stack)
+print('%0.2f' % stack[0])
+print(format(stack[0], ".2f"))
