@@ -1,5 +1,5 @@
 import sys
-A, B, C, D = map(int, sys.stdin.readline().split())
-AB = int(str(A) + str(B))
-CD = int(str(C) + str(D))
+A, B, C, D = sys.stdin.readline().split()
+AB = int(A + B)
+CD = int(C + D)
 print(AB + CD)
