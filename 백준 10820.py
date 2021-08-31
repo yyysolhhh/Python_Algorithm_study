@@ -9,7 +9,7 @@ while(True):
                 num[1] += 1
             elif i.isdecimal():
                 num[2] += 1
-            elif i == " ":
+            elif i.isspace():
                 num[3] += 1
         print(" ".join(map(str, num)))
     except EOFError:
