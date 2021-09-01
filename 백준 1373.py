@@ -11,7 +11,7 @@ for i in range(len(binary)//3):   # 8진수로 바로 변환
     octal.append(str(three))
 print("".join(octal[::-1]))
 
-# 2 -> 10 -> 8
+# 2 -> 10 -> 8 (시간초과)
 decimal = 0
 octal2 = []
 for i in range(len(binary), 0, -1):   # 10진수로 변환하고 8진수로 변환
