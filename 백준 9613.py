@@ -1,10 +1,17 @@
 import sys
 
 
+# def gcd(a, b):
+#     while b != 0:
+#         a, b = b, a % b
+#     return a
+
+# 재귀함수 이용한 gcd 함수
 def gcd(a, b):
-    while b != 0:
-        a, b = b, a % b
-    return a
+    if b == 0:
+        return a
+    else:
+        return gcd(b, a % b)
 
 
 t = int(sys.stdin.readline())
