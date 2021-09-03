@@ -12,8 +12,17 @@ josephus = []
 #     josephus.append(str(circle.pop(order)))
 #     N -= 1
 #     order += K - 1
-if N == 1:
-    josephus.append(N)
-else:
+# order -> sequence로 바꿈
+sequence = K - 1
+print(circle)
+while circle:
+    print(sequence)
+    if sequence >= len(circle):
+        sequence = sequence % len(circle)
+        # sequence = sequence - len(circle)
+    else:
+        josephus.append(str(circle.pop(sequence)))
+        sequence += K - 1
+    print(sequence, circle)
 
 print("<" + ", ".join(josephus) + ">")
