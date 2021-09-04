@@ -1,13 +1,23 @@
-import sys
-N = int(sys.stdin.readline())
-times = 0
-while N != 1:
-    times += 1
-    if N % 3 == 0:
-        N /= 3
-    if N % 2 == 0:
-        N /= 2
-    else:
-        N -= 1
+# import sys
 
-print(int(N), times)
+# N = int(sys.stdin.readline())
+# for i in range(N-1, 0, -1):
+#     current =
+#     if N % 3 == 0:
+
+#     if N % 2 == 0:
+
+n = int(input())
+
+dp = [0 for _ in range(n+1)]
+
+for i in range(2, n+1):
+    dp[i] = dp[i-1] + 1
+
+    if i % 2 == 0 and dp[i] > dp[i//2] + 1:
+        dp[i] = dp[i//2]+1
+
+    if i % 3 == 0 and dp[i] > dp[i//3] + 1:
+        dp[i] = dp[i//3] + 1
+
+print(dp[n])
