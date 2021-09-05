@@ -11,7 +11,7 @@ def series():
 
 
 N, M = map(int, input().split())
-num = input().split()
+num = list(map(int, input().split()))
 num.sort()
 combi = []
 series()
