@@ -11,9 +11,13 @@ for i in range(9):
         if sum_of_tall - (tall[i] + tall[j]) == 100:
             if i == j:
                 continue
-            tall.pop(j)
-            tall.pop(i)
+            rmv1 = tall[i]
+            rmv2 = tall[j]
+            # tall.pop(j)
+            # tall.pop(i)
             break
-    break
+tall.remove(rmv1)
+tall.remove(rmv2)
+
 for i in tall:
     print(i)
