@@ -19,9 +19,8 @@ N = [int(input()) for _ in range(T)]
 primeNum = checkPrimeNum(max(N))
 for i in N:
     goldbachPartition = 0
-    for j in range(1, i//2+1):
-        if j in primeNum:
-            if i-j in primeNum:
-                goldbachPartition += 1
-                # print(j, i-j, end='|')
+    for j in range(2, i//2+1):
+        if j in primeNum and i-j in primeNum:
+            goldbachPartition += 1
+            # print(j, i-j, end='|')
     print(goldbachPartition)
