@@ -1,4 +1,5 @@
 num = list(map(int, input().split()))
+# 1
 asc = False
 des = False
 for i in range(len(num)-1):
@@ -13,3 +14,11 @@ else:
         print('ascending')
     elif des:
         print('descending')
+
+# 2
+if num == sorted(num):
+    print("ascending")
+elif num == sorted(num, reverse=True):
+    print("descending")
+else:
+    print("mixed")
