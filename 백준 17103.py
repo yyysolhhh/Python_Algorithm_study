@@ -28,7 +28,7 @@ input = sys.stdin.readline
 # 다른 사람 풀이 참고
 def checkPrimeNum(n):
     primeNumList = [False, False] + [True] * n
-    for i in range(2, n+1):
+    for i in range(2, int(n**0.5)+1):
         for j in range(i+i, n+1, i):
             if primeNumList[j]:
                 primeNumList[j] = False
@@ -38,6 +38,7 @@ def checkPrimeNum(n):
 T = int(input())
 N = [int(input()) for _ in range(T)]
 primeNum = checkPrimeNum(max(N))
+print(primeNum)
 for i in N:
     goldbachPartition = 0
     for j in range(2, i//2+1):
