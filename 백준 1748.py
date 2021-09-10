@@ -8,7 +8,10 @@ def digit(n):
 
 N = int(sys.stdin.readline())
 result = 0
-for i in range(1, N+1):
-    result += digit(i)
-    print(i, result)
+if N < 10:
+    result = N
+else:
+    result += 9
+    for i in range(10, N+1):
+        result += digit(i)
 print(result)
