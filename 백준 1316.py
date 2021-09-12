@@ -4,11 +4,10 @@ result = 0
 for i in words:
     temp = []
     i = list(i)
-    for j in i:
-        if j in temp and j != temp[-1]:
+    while i:
+        if i[0] in temp and i[0] != temp[-1]:
             break
-        temp.append(i.pop())
-    print(i, temp)
+        temp.append(i.pop(0))
     if not i:
         result += 1
 print(result)
