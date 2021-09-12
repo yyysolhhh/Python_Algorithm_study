@@ -1,4 +1,5 @@
 changed = ['c=', 'c-', 'dz=', 'd-', 'lj', 'nj', 's=', 'z=']
+# 1 내 풀이
 word = list(input())
 result = 0
 while word:
@@ -14,3 +15,9 @@ while word:
         result += 1
         word.pop(0)
 print(result)
+
+# 2 다른 사람 풀이
+alpha = input()
+for t in changed:
+    alpha = alpha.replace(t, '*')
+print(len(alpha))
