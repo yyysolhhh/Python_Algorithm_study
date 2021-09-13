@@ -1,7 +1,7 @@
 import sys
 input = sys.stdin.readline
 N = int(input())
-A = list(map(int, input().split()))
+A = sorted(map(int, input().split()))
 M = int(input())
 nums = list(map(int, input().split()))
 for i in nums:
