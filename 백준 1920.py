@@ -9,3 +9,4 @@ for i in nums:
         print(1)
     else:
         print(0)
+# 이분탐색

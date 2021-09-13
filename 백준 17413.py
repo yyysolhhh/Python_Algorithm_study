@@ -58,28 +58,50 @@
 # ans.insert(index[int((len(index)/2-1))]+1, "".join(reverse).strip())
 # print("".join(ans))
 
-import sys
-S = sys.stdin.readline()
-tag = False
-in_tag = []
-ans = []
-index = []
+# 실패
+# import sys
+# S = sys.stdin.readline()
+# tag = False
+# in_tag = []
+# ans = []
+# index = []
 
+# for i in range(len(S)):
+#     if S[i] == "<":
+#         tag = True
+#         in_tag.append(S[i])
+#         continue
+#     elif S[i] == ">":
+#         tag = False
+#         in_tag.append(S[i])
+#         continue
+#     if tag == True:
+#         in_tag.append(S[i])
+#     else:
+#         ans.append(S[i])
+#         # index[0].append(i)
+#     # mid = "".join(mid).strip()
+#     # ans[index[0]:index[-1]+1].reverse()
+# print(in_tag, ans)
+# print("".join(in_tag)+"".join(ans))
+
+import sys
+input = sys.stdin.readline
+S = input().strip()
+tag = False
+result = []
+index = 0
 for i in range(len(S)):
-    if S[i] == "<":
+    if S[i] == '<':
         tag = True
-        in_tag.append(S[i])
-        continue
-    elif S[i] == ">":
+    elif S[i] == '>':
         tag = False
-        in_tag.append(S[i])
-        continue
+        index = i+1
     if tag == True:
-        in_tag.append(S[i])
-    else:
-        ans.append(S[i])
-        # index[0].append(i)
-    # mid = "".join(mid).strip()
-    # ans[index[0]:index[-1]+1].reverse()
-print(in_tag, ans)
-print("".join(in_tag)+"".join(ans))
+        result.append(S[i])
+    elif tag == False and S[i] != ' ':
+        result.insert(index, S[i])
+    elif tag == False and S[i] == ' ':
+        index = i+1
+        result.append(S[i])
+print(''.join(result))
