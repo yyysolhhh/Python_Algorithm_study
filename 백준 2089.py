@@ -1,9 +1,14 @@
 import sys
 N = int(sys.stdin.readline())
-remainder = []
+remainder = ''
+if not N:
+    sys.stdout.write('0')
+    exit()
 while N:
-    if N % -2:
-
-        remainder.append(N % -2)
+    if N % (-2):
+        remainder += '1'
+        N = N // -2 + 1
+    else:
+        remainder += '0'
         N //= -2
-print(remainder)
+sys.stdout.write(remainder[::-1])
