@@ -3,7 +3,7 @@ N = int(sys.stdin.readline())
 remainder = ''
 if not N:
     sys.stdout.write('0')
-    exit()
+    # exit()
 while N:
     if N % (-2):
         remainder += '1'
