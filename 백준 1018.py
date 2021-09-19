@@ -1,3 +1,5 @@
+# N * M 크기의 보드에서 8 * 8 크기씩 잘라서 다시 칠해야 할 칸의 개수가 가장 적은 경우 찾기
+# W로 시작하는 경우와 B로 시작하는 경우에 어긋나는 칸의 개수를 모두 구해서 result에 append 하고 그 중에 작은 값을 print 한다.
 N, M = map(int, input().split())
 board = list(input() for _ in range(N))
 result = []
