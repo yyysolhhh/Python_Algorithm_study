@@ -12,9 +12,8 @@ nums = list(map(int, input().split()))
 #     else:
 #         print(0)
 
+
 # 이분탐색
-
-
 def binary(i, A, start, end):
     if start > end:
         return 0
