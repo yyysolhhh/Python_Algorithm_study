@@ -1,12 +1,12 @@
-# import sys
+import sys
+input = sys.stdin.readline
+N = int(input())
+result = 0
+if N % 3 == 0:
 
-# N = int(sys.stdin.readline())
-# for i in range(N-1, 0, -1):
-#     current =
-#     if N % 3 == 0:
+if N % 2 == 0:
 
-#     if N % 2 == 0:
-
+    # 다른 사람 풀이
 n = int(input())
 
 dp = [0 for _ in range(n+1)]

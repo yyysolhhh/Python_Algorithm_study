@@ -9,3 +9,4 @@ if N == channel:
 else:
     for i in N:
         if i in broken_button:
+            break
