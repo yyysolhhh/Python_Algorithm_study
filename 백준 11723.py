@@ -25,8 +25,9 @@ for _ in range(M):
     operation = input().split()
     if len(operation) == 1:
         if operation[0] == 'all':
-            S = {str(i) for i in range(1, 21)}
+            S = {i for i in range(1, 21)}
         elif operation[0] == 'empty':
             S = set()
     else:
-        operate(S, operation[0], operation[1])
+        operate(S, operation[0], int(operation[1]))
+    print(S)
