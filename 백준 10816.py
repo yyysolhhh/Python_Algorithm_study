@@ -9,7 +9,7 @@ result = []
 # for i in cardToCount:
 #     print(card.count(i), end=' ')
 
-
+# 이분탐색
 def binary(i, card, start, end):
     if start > end:
         return 0
@@ -28,5 +28,4 @@ for i in cardToCount:
     end = len(card) - 1
     if i not in result:
         result[i] = binary(i, card, start, end)
-for i in result:
-    print(result[i], end=' ')
+print(result)
