@@ -4,12 +4,14 @@ N = int(input())
 card = sorted(map(int, input().split()))
 M = int(input())
 cardToCount = list(map(int, input().split()))
-result = []
 # 시간 초과
+# result = []
 # for i in cardToCount:
 #     print(card.count(i), end=' ')
 
 # 이분탐색
+
+
 def binary(i, card, start, end):
     if start > end:
         return 0
@@ -28,4 +30,4 @@ for i in cardToCount:
     end = len(card) - 1
     if i not in result:
         result[i] = binary(i, card, start, end)
-print(result)
+print(' '.join(map(str, result.values())))
