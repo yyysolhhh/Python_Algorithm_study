@@ -22,7 +22,7 @@
 
 N = int(input())
 bonji = 0
-while N > 0:
+while N >= 0:
     if N % 5 == 0:
         bonji += N // 5
         print(bonji)
