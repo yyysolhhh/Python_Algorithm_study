@@ -14,19 +14,46 @@ X = int(input())
 #         order += 1
 # print('%d/%d' % (denom, numer))
 
-# 2
+# 2 시간 초과
+# line = 1
+# cnt = 1
+# up = 1
+# down = line
+# while cnt < X:
+#     if (line + 1) * line / 2 <= cnt:
+#         line += 1
+#         up = 1
+#         down = line
+#         cnt += 1
+#         continue
+#     cnt += 1
+#     up += 1
+#     down -= 1
+# print(up, '/', down, sep='')
+
+# 3 시간 초과
+# line = 1
+# cnt = 1
+# up = 1
+# down = line
+# while cnt < X:
+#     if (line + 1) * line / 2 <= cnt:
+#         line += 1
+#     cnt += 1
+# up = int(cnt - ((line - 1) * line / 2))
+# down = line - up + 1
+# print(up, '/', down, sep='')
+
+# 4
 line = 1
-cnt = 1
 up = 1
 down = line
-while cnt < X:
-    if (line + 1) * line / 2 <= cnt:
-        line += 1
-        up = 1
-        down = line
-        cnt += 1
-        continue
-    cnt += 1
-    up += 1
-    down -= 1
+while (line + 1) * line / 2 < X:
+    line += 1
+if line % 2 == 0:
+    up = int(X - ((line - 1) * line / 2))
+    down = line - up + 1
+else:
+    down = int(X - ((line - 1) * line / 2))
+    up = line - down + 1
 print(up, '/', down, sep='')
