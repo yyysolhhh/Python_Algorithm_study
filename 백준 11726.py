@@ -21,5 +21,5 @@ for i in range(0, n):
         dp.append(2)
     else:
         dp.append(dp[i-1] + dp[i-2])
-    print(dp)
+
 print(dp[-1] % 10007)
