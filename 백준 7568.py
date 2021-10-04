@@ -1,6 +1,6 @@
 N = int(input())
 info = []
-result = [0 for i in range(N)]
+result = [1 for i in range(N)]
 for _ in range(N):
     info.append(list(map(int, input().split())))
 for i in range(len(info)):
@@ -8,6 +8,6 @@ for i in range(len(info)):
         if i != j:
             if info[i][0] < info[j][0] and info[i][1] < info[j][1]:
                 result[i] += 1
-for i in range(len(result)):
-    result[i] += 1
+# for i in range(len(result)):
+#     result[i] += 1
 print(*result)
