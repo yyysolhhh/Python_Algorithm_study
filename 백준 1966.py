@@ -5,7 +5,6 @@ for _ in range(n):
     N, M = map(int, input().split())
     queue = list(map(int, input().split()))
     result = 0
-    # print(M, queue)
     while queue:
         if max(queue) != queue[0]:
             queue.append(queue.pop(0))
@@ -18,5 +17,4 @@ for _ in range(n):
             M -= 1
         else:
             M = len(queue) - 1
-        # print(M, queue)
     print(result)
