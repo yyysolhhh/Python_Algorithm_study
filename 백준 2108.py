@@ -1,3 +1,5 @@
+import sys
+input = sys.stdin.readline
 N = int(input())
 num = []
 mean, med, mod, rng = 0, 0, 0, 0
@@ -18,8 +20,8 @@ count = sorted(count.items(), key=lambda x: (x[1], x[0]))
 if len(count) > 1:
     if count[0][1] == count[1][1]:
         mod = count[1][0]
-    # else:
-    #     mod = count[0][0]
+    else:
+        mod = count[0][0]
 else:
     mod = count[0][0]
 # range
