@@ -7,15 +7,15 @@ for _ in range(N):
 num.sort()
 
 
-def mean():
+def mean(num):
     return sum(num)//len(num)
 
 
-def median():
+def median(num):
     return num[len(num)//2]
 
 
-def mode():
+def mode(num):
     count = {}
     for i in num:
         count[i] = num.count(i)
@@ -29,11 +29,11 @@ def mode():
         return count[0][0]
 
 
-def range():
+def range(num):
     return num[-1] - num[0]
 
 
-print(mean())
-print(median())
-print(mode())
-print(range())
+print(mean(num))
+print(median(num))
+print(mode(num))
+print(range(num))
