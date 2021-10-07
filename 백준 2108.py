@@ -1,4 +1,5 @@
 import sys
+from collections import Counter
 input = sys.stdin.readline
 N = int(input())
 num = []
@@ -15,22 +16,36 @@ def median(num):
     return num[len(num)//2]
 
 
+# def mode(num):
+#     count = {}
+#     for i in num:
+#         count[i] = num.count(i)
+#     count = sorted(count.items(), key=lambda x: (x[1], x[0]))
+#     if len(count) > 1:
+#         if count[0][1] == count[1][1]:
+#             return count[1][0]
+#         else:
+#             return count[0][0]
+#     else:
+#         return count[0][0]
+
 def mode(num):
-    count = {}
-    for i in num:
-        count[i] = num.count(i)
-    count = sorted(count.items(), key=lambda x: (x[1], x[0]))
-    if len(count) > 1:
-        if count[0][1] == count[1][1]:
-            return count[1][0]
+    count = Counter(num)
+    count_most = count.most_common(2)
+    print(count_most)
+    if len(num) > 1:
+        if count_most[0][1] == count_most[1][1]:
+            return count_most[1][0]
         else:
-            return count[0][0]
+            return count[0]
     else:
-        return count[0][0]
+        return num[0]
 
 
+# def range(num):
+#     return num[-1] - num[0]
 def range(num):
-    return num[-1] - num[0]
+    return max(num) - min(num)
 
 
 print(mean(num))
