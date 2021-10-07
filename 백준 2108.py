@@ -9,7 +9,8 @@ num.sort()
 
 
 def mean(num):
-    return sum(num)//len(num)
+    return round(sum(num)/len(num))
+    # return sum(num)//len(num)
 
 
 def median(num):
@@ -32,14 +33,13 @@ def median(num):
 def mode(num):
     count = Counter(num)
     count_most = count.most_common(2)
-    print(count_most)
     if len(num) > 1:
         if count_most[0][1] == count_most[1][1]:
             return count_most[1][0]
         else:
-            return count[0]
+            return count_most[0][0]
     else:
-        return num[0]
+        return count_most[0][0]
 
 
 # def range(num):
