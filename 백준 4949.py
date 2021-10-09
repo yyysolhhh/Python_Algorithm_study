@@ -8,8 +8,12 @@ while True:
     for i in string:
         if i == '(' or i == '[':
             stack.append(i)
-        elif i == ')' and stack[-1] == '(' or i == ']' and stack[-1] == '[':
+        elif i == ')' and stack[-1] == '(':
             stack.pop()
+        elif i == ']' and stack[-1] == '[':
+            stack.pop()
+        if not stack and i == ')' or i == ']':
+            break
     stack.pop()
     if len(stack):
         print("no")
