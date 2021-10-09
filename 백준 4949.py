@@ -21,6 +21,8 @@ while True:
             else:
                 result = 'no'
                 break
+    if stack:
+        result = 'no'
     print(result)
     # 틀림
     # if i == '(' or i == '[':
