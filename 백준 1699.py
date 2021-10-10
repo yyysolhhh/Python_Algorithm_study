@@ -7,4 +7,11 @@
 # print(res)
 
 N = int(input())
-dp = [0 for i in range(N)]
+dp = [0 for _ in range(N+1)]
+for i in range(1, N+1):
+    temp = []
+    for j in range(1, int(i**0.5)+1):
+        temp.append(dp[i-j*j])
+    dp[i] = min(temp) + 1
+    print(dp)
+print(dp[N])
