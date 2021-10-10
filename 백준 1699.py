@@ -17,11 +17,10 @@ for i in range(1, N+1):
     print(temp)
 print(dp[N])
 
-# 다른 풀이
+# 다른 풀이 - 시간초과
 N = int(input())
 dp = [i for i in range(N+1)]
 for i in range(1, N+1):
-    print(dp)
     for j in range(1, int(i**0.5)+1):
         dp[i] = min(dp[i], dp[i-j*j]+1)
 print(dp[N])
