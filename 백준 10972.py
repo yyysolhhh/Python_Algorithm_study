@@ -1,3 +1,5 @@
+# 뒤에서부터 오면서 앞 수가 더 작은 쌍을 찾고 그 쌍의 앞 수보다 큰 수를 뒤에서부터 찾아 그 앞 수와 swap하고 뒷부분을 정렬한다.
+# 다음 순열을 찾으면 last = False로 바꾸고 마지막 순열일 경우 -1을 출력한다.
 N = int(input())
 perm = list(map(int, input().split()))
 last = True
