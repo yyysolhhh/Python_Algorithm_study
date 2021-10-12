@@ -1,3 +1,11 @@
+# 다른 방법 - permutations 사용
+from itertools import permutations
+N = int(input())
+pmt = [i for i in range(1, N+1)]
+for i in list(permutations(pmt)):
+    print(*i)
+
+# 백준에서 Type Error 나옴
 N = int(input())
 first_perm = [i for i in range(1, N+1)]
 perm = first_perm
