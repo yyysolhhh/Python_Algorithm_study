@@ -1,20 +1,27 @@
-# 2 mid +- 1 왜 하는 건지 아직 모르겠음
+# 2 이분탐색 (mid +- 1 왜 하는 건지 아직 모르겠음)
 import sys
 input = sys.stdin.readline
+
 N, M = map(int, input().split())
-# height = sorted(map(int, input().split()))
-height = list(map(int, input().split()))
+height = sorted(map(int, input().split()))
+# height = list(map(int, input().split()))
+
 start = 0
-# end = height[-1]
-end = max(height)
+end = height[-1]
+# end = max(height)
+
 while start <= end:
     # mid = int((start + end) / 2)
     mid = (start + end) // 2
     cut = 0
-    # print(start, end, mid)
-    for i in height:
-        if i - mid > 0:
-            cut += i - mid
+
+    # 시간 초과 원인
+    # for i in height:
+    #     if i - mid > 0:
+    #         cut += i - mid
+    cut = sum(i - mid for i in height if i - mid > 0)
+    # cut = sum(i - mid if i - mid > 0 else 0 for i in height)
+
     if cut < M:
         end = mid - 1
     else:
