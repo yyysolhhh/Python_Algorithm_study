@@ -9,10 +9,10 @@ def binary(H, N, M, height):
         if cut == M:
             return H
         elif cut > M:
-            H += int(H / (2 ** j))
+            H += int(height[-1] / (2 ** j))
             binary(H, N, M, height)
         else:
-            H -= int(H / (2 ** j))
+            H -= int(height[-1] / (2 ** j))
             binary(H, N, M, height)
 
 
