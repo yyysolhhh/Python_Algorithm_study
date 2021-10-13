@@ -1,22 +1,28 @@
-def binary(H, N, M, height):
+def binary(H, mid, start, end, N, M, height):
     while True:
         cut = 0
-        j = 1
         for i in range(N):
-            if height[i] - H > 0:
-                cut += height[i] - H
-        j += 1
+            if height[i] - mid > 0:
+                cut += height[i] - mid
         if cut == M:
-            return H
+            return H[mid]
         elif cut > M:
-            H += int(height[-1] / (2 ** j))
-            binary(H, N, M, height)
+            # H = H[mid:]
+            start = mid
+            end = len(H) - 1
+            mid = int((start + end) / 2)
+            # H += int(H / (2 ** j))
+            binary(H, mid, start, end, N, M, height)
         else:
-            H -= int(height[-1] / (2 ** j))
-            binary(H, N, M, height)
+            # H = H[:mid+1]
+            end = mid
+            mid = int((start + end) / 2)
+            # H -= int(H / (2 ** j))
+            binary(H, mid, start, end, N, M, height)
 
 
 N, M = map(int, input().split())
 height = sorted(map(int, input().split()))
-H = int(height[-1] / 2)
-print(binary(H, N, M, height))
+H = [i for i in range(height[-1])]
+mid = H[int(len(H) / 2)]
+print(binary(H, mid, 0, N, N, M, height))
