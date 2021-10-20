@@ -18,6 +18,8 @@ N = int(input())
 # for i in combi:
 #   gap.add(abs(i[0] - i[1]))
 # print(min(gap))
+
+# 2
 S = [i for i in range(N)]
 case = list(combinations(S, N//2))
 for i in range(N):
