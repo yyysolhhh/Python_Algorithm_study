@@ -1,12 +1,15 @@
-N = list(map(int, input()))
+N = int(input())
 M = int(input())
-broken_button = list(map(int, input().split()))
-print(N, broken_button)
-channel = 100
-result = 0
-if N == channel:
-    print(result)
+if M:
+    broken = set(input().split())
 else:
-    for i in N:
-        if i in broken_button:
+    broken = set()
+# channel = 100
+result = abs(N - 100)
+for i in range(1000000):
+    for j in str(i):
+        if j in broken:
             break
+    else:
+        result = min(result, len(str(i)) + abs(N - i))
+print(result)
