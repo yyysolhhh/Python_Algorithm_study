@@ -1,7 +1,7 @@
 # from os import chdir
 infix = input()
-operator = ['+', '-', '*', '/']
-# 틀림
+# operator = ['+', '-', '*', '/']
+# 1 틀림
 # stack1 = []
 # stack2 = []
 # stack3 = []
@@ -24,22 +24,50 @@ operator = ['+', '-', '*', '/']
 #         while stack2:
 #             postfix.append(stack2.pop())
 #         check = False
+# 2
+# stack = []
+# postfix = []
+# for i in infix:
+#     if i.isalpha():
+#         postfix.append(i)
+#     elif i == '*' or i == '/':
+#         stack.append(i)
+#     elif i == '+' or i == '-':
+#         while stack:
+#             postfix.append(stack.pop(0))
+#         stack.append(i)
+#     else:
+#         # if i == '(':
+#         # stack.append(i)
 
+#         if i == ')':
+#             while stack:
+#                 postfix.append(stack.pop())
+# print(''.join(postfix))
+# # (A+(B*C))-(D/E)
+
+# 3 맞음 (*,/ 우선순위 고려)
 stack = []
 postfix = []
 for i in infix:
     if i.isalpha():
         postfix.append(i)
-    elif i == '*' or i == '/':
-        stack.append(i)
-    elif i == '+' or i == '-':
-        stack.append(i)
     else:
-        # if i == '(':
-        # stack.append(i)
-
-        if i == ')':
-            while stack:
+        if i == '*' or i == '/':
+            while stack and (stack[-1] == '*' or stack[-1] == '/'):
                 postfix.append(stack.pop())
+            stack.append(i)
+        elif i == '+' or i == '-':
+            while stack and stack[-1] != '(':
+                postfix.append(stack.pop())
+            stack.append(i)
+        else:
+            if i == '(':
+                stack.append(i)
+            elif i == ')':
+                while stack and stack[-1] != '(':
+                    postfix.append(stack.pop())
+                stack.pop()
+while stack:
+    postfix.append(stack.pop())
 print(''.join(postfix))
-# (A+(B*C))-(D/E)
