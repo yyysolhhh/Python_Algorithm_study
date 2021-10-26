@@ -17,7 +17,6 @@ res = 0
 for i in list(reversed(A)):
     res += K // i
     K %= i
-    if K == 0:
+    if K == 0:  # 빼도 되는 부분
         break
-    print(i, K)
 print(res)
