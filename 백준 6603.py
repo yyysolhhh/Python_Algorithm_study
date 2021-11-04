@@ -8,4 +8,4 @@ while True:
     lotto = list(combinations(case[1:], 6))
     for i in lotto:
         print(*i)
-    print(' ')
+    print()
