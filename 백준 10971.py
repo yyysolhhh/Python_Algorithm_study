@@ -1,4 +1,4 @@
-from itertools import combinations, permutations
+from itertools import permutations
 import sys
 input = sys.stdin.readline
 N = int(input())
