@@ -1,10 +1,14 @@
 def gcd(A, B):
     while B:
         A, B = B, A % B
-    return A
+    return A * '1'
 
 
-a, b = map(int, input().split())
-A = int('1' * a)
-B = int('1' * b)
+A, B = map(int, input().split())
 print(gcd(A, B))
+
+# for i in range(1, 30):
+#     for j in range(1, 30):
+#         c = int('1' * i)
+#         d = int('1' * j)
+#         print(i, j, len(str(gcd(c, d))))
