@@ -1,3 +1,5 @@
+# 2
+# 문제 제한 범위 안의 수 전부 소수이면 True, 아니면 False return해서 미리 prime에 입력
 def is_prime(n):
     for j in range(2, int(n**0.5)+1):
         if n % j == 0:
@@ -11,6 +13,7 @@ prime = []
 for i in num:
     prime.append(is_prime(i))
 
+# prime에서 n+1부터 2n까지의 수 중 소수 개수(prime[i] == True) count해서 출력
 while True:
     n = int(input())
     if n == 0:
