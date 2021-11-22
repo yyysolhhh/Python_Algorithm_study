@@ -2,6 +2,7 @@ import math
 import sys
 input = sys.stdin.readline
 N = int(input())
+
 # 2
 factorial = math.factorial(N)
 print(factorial)
@@ -12,6 +13,7 @@ print(factorial)
 # 3 시간 초과
 # while factorial % 10 == 0:
 #     factorial //= 10
+
 # 1 시간 초과
 # cnt = 0
 # for i in str(factorial)[::-1]:
@@ -19,6 +21,7 @@ print(factorial)
 #         break
 #     cnt += 1
 # factorial //= 10 ** cnt
+
 # 2 시간 초과
 while factorial % 10 == 0:
     factorial //= 10
