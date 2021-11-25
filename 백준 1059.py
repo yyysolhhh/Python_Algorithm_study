@@ -5,6 +5,8 @@ L = int(input())
 S = [0] + sorted(map(int, input().split()))
 n = int(input())
 cnt = 0
+min_v = 0
+max_v = 1001
 if n in S:
     print(0)
 else:
@@ -28,18 +30,10 @@ else:
     # print(cnt)
 
     # 2
-    if len(S) == 1:
-        if n < S[0]:
-            min_v = 0
-            max_v = S[0] - 1
-        else:
-            min_v = S[0] + 1
-            max_v = 1001
-    else:
-        for i in range(L-1):
-            if S[i] < n or n < S[i+1]:
-                min_v = S[i] + 1
-                max_v = S[i+1] - 1
-                break
+    for i in range(L):
+        if S[i] < n and n < S[i+1]:
+            min_v = S[i] + 1
+            max_v = S[i+1] - 1
+            break
     cnt = (n - min_v) * (max_v - n + 1) + (max_v - n)
     print(cnt)
