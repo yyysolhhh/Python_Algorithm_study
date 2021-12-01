@@ -3,17 +3,20 @@ M = int(input())
 S = input()
 
 # 2
-cnt = 0
-I = 0
+IOI = 0
 PN = 0
-while i <= N:
+i = 1
+while i < M-1:
     if S[i-1] == 'I' and S[i] == 'O' and S[i+1] == 'I':
-        i += 1
-        if i == N:
+        IOI += 1
+        if IOI == N:
             PN += 1
+            IOI -= 1
+        i += 1
     else:
-        i = 0
-
+        IOI = 0
+    i += 1
+print(PN)
 
 # 1 시간 초과
 # PN = 'IO' * N + 'I'
