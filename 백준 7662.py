@@ -4,7 +4,7 @@ for _ in range(T):
     k = int(input())
     max_heap = []
     min_heap = []
-    for _ in range(k):
+    for i in range(k):
         op, num = input().split()
         num = int(num)
         if op == 'I':   # 삽입
