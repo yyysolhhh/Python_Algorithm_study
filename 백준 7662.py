@@ -1,20 +1,22 @@
 import heapq
 T = int(input())
-k = int(input())
-heap = []
 for _ in range(T):
+    k = int(input())
+    max_heap = []
+    min_heap = []
     for _ in range(k):
         op, num = input().split()
-        if op == 'I':
-            heapq.heappush(heap, int(num))
-        elif op == "D":
-            if heap:
-                if num == '1':
-                    heapq.heappop(heap)
-                elif num == '-1':
-                    heapq.heappop(heap)
-        print(heap)
-    if heap:
-        print(heap[-1], heap[0])
+        num = int(num)
+        if op == 'I':   # 삽입
+            heapq.heappush(max_heap, (-1 * num, num))
+            heapq.heappush(min_heap, num)
+        elif op == "D":   # 삭제
+            if num == 1:    # 최댓값 삭제
+                heapq.heappop(max_heap)[1]
+            elif num == -1:   # 최솟값 삭제
+                heapq.heappop(min_heap)
+        print(max_heap, min_heap)
+    if max_heap and min_heap and max_heap[0][1] != min_heap[0]:
+        print(max_heap[0][1], min_heap[0])
     else:
         print('EMPTY')
