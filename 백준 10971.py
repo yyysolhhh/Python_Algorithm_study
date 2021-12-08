@@ -1,7 +1,7 @@
+import sys
+input = sys.stdin.readline
 # # 1
 # from itertools import permutations
-# import sys
-# input = sys.stdin.readline
 # N = int(input())
 # W = []
 # for _ in range(N):
