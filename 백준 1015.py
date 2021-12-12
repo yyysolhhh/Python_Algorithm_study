@@ -1,13 +1,12 @@
 N = int(input())
 A = list(map(int, input().split()))
-
-
-# P = {}
-# for i in range(N):
-#     P[A[i]] = i
-# print(P)
-# P = sorted(P.items())
-# print(P)
+sorted_A = sorted(A)
+P = []
+for i in A:
+    idx = sorted_A.index(i)
+    P.append(idx)
+    sorted_A[idx] = 0
+print(*P)
 
 # 틀림
 # P = [0 for _ in range(N)]
