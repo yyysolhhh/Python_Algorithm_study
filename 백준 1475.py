@@ -1,6 +1,6 @@
 N = input()
 one_set = [0 for i in range(10)]
-# 3
+# 3 맞음
 for i in N:
     i = int(i)
     if i == 9:
