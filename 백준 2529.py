@@ -1,11 +1,12 @@
 k = int(input())
 signs = list(input().split())
 num = [False for _ in range(9)]
-res = []
+min_arr = []
+max_arr = []
 for i in range(k):
-    for j in range(9):
-        num[j] = True
-        res.append(j)
-        if signs[i] == '<':
-
-        elif signs[i] == '>':
+    if signs[i] == '<':
+        for i in range(len(num)):
+            if not num[i]:
+                min_arr.append(i)
+                num[i] = True
+    elif signs[i] == '>':
