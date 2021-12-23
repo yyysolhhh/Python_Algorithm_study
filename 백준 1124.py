@@ -1,7 +1,9 @@
+import sys
+input = sys.stdin.readline
 A, B = map(int, input().split())
 underprime = 0
 prime_list = [False, False] + [True for _ in range(2, B+1)]
-for i in range(2, B+1):
+for i in range(2, int(B**0.5)+1):
     if prime_list[i]:
         for j in range(i+i, B+1, i):
             prime_list[j] = False
