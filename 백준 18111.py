@@ -19,12 +19,12 @@ for h in range(maxh, minh-1, -1):
                 inventory -= 1 * gap
                 t += 1 * gap
             else:
-                break
+                continue
 
-    # if not inventory:
-    #     break
-    # else:
-    if t < time:
-        time = t
-        height = h
+    if inventory < 0:
+        continue
+    else:
+        if t < time:
+            time = t
+            height = h
 print(time, height)
