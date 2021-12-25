@@ -1,3 +1,4 @@
+# 시간초과 (pypy3로 채점했더니 맞았음)
 N, M, B = map(int, input().split())
 board = []
 time = 128000000
@@ -20,7 +21,6 @@ for h in range(maxh, minh-1, -1):
                 t += 1 * gap
             else:
                 continue
-
     if inventory < 0:
         continue
     else:
