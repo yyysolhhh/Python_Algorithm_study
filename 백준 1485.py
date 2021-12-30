@@ -8,7 +8,6 @@ for _ in range(T):
     coord = []
     for _ in range(4):
         coord.append(list(map(int, input().split())))
-    coord.sort(key=lambda x: (x[0], x[1]))
     length = []
     for i in range(4):
         for j in range(i+1, 4):
