@@ -1,5 +1,6 @@
-# 1 맞음
 from itertools import permutations
+
+# 1 맞음
 
 
 def addNum():
