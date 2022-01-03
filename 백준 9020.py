@@ -1,6 +1,6 @@
 T = int(input())
 prime_list = [False, False] + [True for _ in range(10000-2)]
-for i in range(int(10000 ** 0.5) + 1):
+for i in range(2, int(10000 ** 0.5) + 1):
     if prime_list[i]:
         for j in range(i+i, 10000, i):
             prime_list[j] = False
