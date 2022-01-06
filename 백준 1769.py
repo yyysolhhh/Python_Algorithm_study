@@ -1,7 +1,7 @@
 def multiple(X, cnt):
     print(X, cnt)
     if len(X) == 1:
-        if X == 3 or X == 6 or X == 9:
+        if X == '3' or X == '6' or X == '9':
             print(cnt)
             return 'YES'
         else:
