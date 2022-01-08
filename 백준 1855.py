@@ -13,6 +13,7 @@
 #             print(i, j)
 # print(encryption)
 
+# 맞음
 K = int(input())
 encryption = input()
 original = []
