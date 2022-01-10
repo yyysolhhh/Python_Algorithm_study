@@ -6,7 +6,6 @@ for i in range(2, N+1):
             if prime[j]:
                 prime[j] = False
                 K -= 1
-                # print(j, K)
                 if K == 0:
                     print(j)
                     break
