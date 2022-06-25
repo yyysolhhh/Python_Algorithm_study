@@ -13,7 +13,7 @@ def bfs(N):
         # 3. 연결된 곳 순회
         for i in (curr - 1, curr + 1, curr * 2):
             # 4. 갈 수 있는가?
-            if 0 <= i <= 100000 and not visited[i]:
+            if 0 <= i <= max and not visited[i]:
                 # 5. 체크인
                 visited[i] = visited[curr] + 1
                 # 6. 큐에 넣음
@@ -22,6 +22,7 @@ def bfs(N):
 
 input = sys.stdin.readline
 N, K = map(int, input().split())
-visited = [0 for _ in range(100001)]
+max = 10 ** 5
+visited = [0 for _ in range(max + 1)]
 
 print(bfs(N))
