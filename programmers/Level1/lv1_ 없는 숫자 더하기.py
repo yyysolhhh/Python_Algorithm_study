@@ -1,3 +1,2 @@
 def solution(numbers):
-    answer = -1
-    return answer
+    return (sum(range(0, 10)) - sum(numbers))
