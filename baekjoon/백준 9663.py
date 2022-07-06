@@ -14,17 +14,16 @@ def is_duplicated(board, col):
     return 0
 
 
-def solve(board, col, cnt):
+def solve(board, col):
+    global cnt
     row = 0
-    print(col)
     if col == N:
         cnt += 1
         return
     while row < N:
         board[col] = row
-        print(board, cnt, col, row)
         if (is_duplicated(board, col) == 0):
-            solve(board, col + 1, cnt)
+            solve(board, col + 1)
         row += 1
 
 
@@ -32,5 +31,5 @@ N = int(input())
 board = [0 for _ in range(N)]
 cnt = 0
 
-solve(board, 0, cnt)
+solve(board, 0)
 print(cnt)
