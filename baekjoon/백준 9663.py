@@ -1,3 +1,8 @@
+import sys
+
+input = sys.stdin.readline
+
+
 def to_abs(x, y):
     if x - y >= 0:
         return x - y
