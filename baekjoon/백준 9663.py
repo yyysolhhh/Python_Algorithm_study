@@ -10,7 +10,7 @@ def to_abs(x, y):
         return y - x
 
 
-def is_duplicated(board, col):
+def is_duplicated(col):
     for i in range(col):
         if board[i] == board[col]:
             return 1
@@ -19,16 +19,20 @@ def is_duplicated(board, col):
     return 0
 
 
-def solve(board, col):
+def solve(col):
     global cnt
     row = 0
     if col == N:
         cnt += 1
         return
+    # for row in range(N):
+    #     board[col] = row
+    #     if (is_duplicated(col) == 0):
+    #         solve(col + 1)
     while row < N:
         board[col] = row
-        if (is_duplicated(board, col) == 0):
-            solve(board, col + 1)
+        if (is_duplicated(col) == 0):
+            solve(col + 1)
         row += 1
 
 
@@ -36,5 +40,5 @@ N = int(input())
 board = [0 for _ in range(N)]
 cnt = 0
 
-solve(board, 0)
+solve(0)
 print(cnt)
