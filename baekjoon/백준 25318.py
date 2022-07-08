@@ -35,7 +35,7 @@ input = sys.stdin.readline
 #     # x = round(x / sum(p), 0)
 #     # print(int(x))
 
-# 2
+# 2 맞음
 
 N = int(input())
 
