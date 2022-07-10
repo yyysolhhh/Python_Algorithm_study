@@ -1,3 +1,4 @@
+from collections import deque
 import sys
 
 # 메모리 초과
@@ -26,9 +27,9 @@ import sys
 # print(bfs(A) + 1)
 
 def bfs(A):
-    queue = [(A, 0)]
+    queue = deque([(A, 0)])
     while queue:
-        curr, cnt = queue.pop(0)
+        curr, cnt = queue.popleft()
         if curr == B:
             return cnt
         for i in (curr * 2, int(str(curr) + '1')):
