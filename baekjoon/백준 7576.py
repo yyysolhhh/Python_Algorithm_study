@@ -13,17 +13,13 @@ def bfs():
             if 0 <= ny < N and 0 <= nx < M and box[ny][nx] == 0:
                 box[ny][nx] = box[y][x] + 1
                 queue.append((ny, nx))
-    for i, row in enumerate(box):
-        for j, col in enumerate(row):
-            if col == 0:
-                return (-1)
-    return box[ny][nx]
 
 
 input = sys.stdin.readline
 M, N = map(int, input().split())
 box = []
 cnt_empty = 0
+res = 0
 queue = deque()
 for _ in range(N):
     box.append(list(map(int, input().split())))
@@ -35,5 +31,12 @@ for y, row in enumerate(box):
             cnt_empty += 1
 if len(queue) + cnt_empty == N * M:
     print(0)
-else:
-    print(bfs())
+    exit(0)
+bfs()
+for i in box:
+    for j in i:
+        if j == 0:
+            print(-1)
+            exit(0)
+        res = max(res, j)
+print(res - 1)
