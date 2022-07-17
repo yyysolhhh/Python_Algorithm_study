@@ -11,3 +11,4 @@
 
 n = int(input())
 f_matrix = [[1, 1], [1, 0]]
+print()
