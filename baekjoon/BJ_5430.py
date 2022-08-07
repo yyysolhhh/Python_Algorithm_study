@@ -1,28 +1,29 @@
-def func(i):
-    if len(arr) == 0:
-        return -1
-    else:
-        if i == 'R':
-            arr.reverse()
-        elif i == 'D':
-            arr.pop(0)
-    return 1
+from collections import deque
+import sys
 
-
+input = sys.stdin.readline
 T = int(input())
 for _ in range(T):
     p = input()
     n = int(input())
-    arr = input()
+    arr = deque(input().rstrip()[1:-1].split(','))
     is_error = 0
+    r = 0
     if n == 0:
-        print("error")
-        break
-    arr = list(map(int, arr.lstrip('[').rstrip(']').split(',')))
+        arr = deque()
     for i in p:
-        if func(i) == -1:
-            is_error = 1
-            break
+        if i == 'R':
+            r += 1
+        elif i == 'D':
+            if len(arr) == 0:
+                is_error = 1
+                break
+            elif r % 2 == 0:
+                arr.popleft()
+            else:
+                arr.pop()
+    if r % 2 == 1:
+        arr.reverse()
     if is_error == 1:
         print("error")
     else:
