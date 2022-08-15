@@ -13,11 +13,11 @@ def bfs():
                 comeback = 1
             if comeback == 0:
                 if visited[n] == 0 and n > curr:
-                    visited[n] = 1
+                    visited[n] = visited[curr] + 1
                     queue.append(n)
             else:
                 if visited[n] == 0 and n < curr:
-                    visited[n] = 1
+                    visited[n] = visited[curr] + 1
                     queue.append(n)
 
 
