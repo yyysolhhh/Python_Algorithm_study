@@ -30,9 +30,17 @@ a = int(input())
 print(a << 1)
 
 # 6047
+a, b = map(int, input().split())
+print(a << b)
 
 # 6048
+a, b = map(int, input().split())
+print(True if a < b else False)
 
 # 6049
+a, b = map(int, input().split())
+print(True if a == b else False)
 
 # 6050
+a, b = map(int, input().split())
+print(True if b >= a else False)
