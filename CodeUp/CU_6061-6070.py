@@ -7,6 +7,8 @@ a, b = map(int, input().split())
 print(a ^ b)
 
 # 6063
+a, b = map(int, input().split())
+print(a if a > b else b)
 
 # 6064
 
