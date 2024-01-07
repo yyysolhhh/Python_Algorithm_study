@@ -8,10 +8,14 @@
 #else:
 #    print(res // 2 + 1)
 
-# 다른 풀이
+# 2
+#s = input()
+#res = 1
+#for i, c in enumerate(s[1:]):
+#    if c != s[i]:
+#        res += 1
+#print(res // 2)
+
+# 3
 s = input()
-res = 1
-for i, c in enumerate(s[1:]):
-    if c != s[i]:
-        res += 1
-print(res // 2)
+print(max(s.count("01"), s.count("10")))
