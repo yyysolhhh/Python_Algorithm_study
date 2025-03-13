@@ -1,6 +1,11 @@
 # 1
+#import time
+
 import sys
 input = sys.stdin.readline
+
+#start = time.time()
+
 dx = [1, -1, 0, 0]
 dy = [0, 0, 1, -1]
 ans = 0
@@ -20,10 +25,13 @@ def solve(x, y, cnt):
 
 R, C = map(int, input().split())
 board = [list(input()) for _ in range(R)]  # input()으로 했을때 시간초과
+#board = [input() for _ in range(R)]  # input()으로 했을때 시간초과
 visited.add(board[0][0])
 solve(0, 0, 1)
 print(ans)
 
+#end = time.time()
+#print(end - start)
 
 # 2
 import sys
